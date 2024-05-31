@@ -23,7 +23,7 @@ class AuthService:
                     "firstName": user.firstName,
                     "lastName": user.lastName,
                     "iat": now,
-                    "exp": now + timedelta(days=7),
+                    "exp": now + timedelta(days=1),
                 }
                 rt_payload = {
                     "sub": user.email,
@@ -42,7 +42,7 @@ class AuthService:
                             rt_payload, os.getenv("JWT_RT_SECRET_KEY")
                         ),
                     },
-                    "expiresIn": time.mktime((now + timedelta(hours=1)).timetuple()),
+                    "expiresIn": time.mktime((now + timedelta(days=1)).timetuple()),
                 }
         raise HTTPException(status_code=403, detail="Wrong credentials")
 
@@ -63,7 +63,7 @@ class AuthService:
             "firstName": user.firstName,
             "lastName": user.lastName,
             "iat": now,
-            "exp": now + timedelta(hours=1),
+            "exp": now + timedelta(days=1),
         }
         rt_payload = {
             "sub": user.email,
@@ -78,5 +78,5 @@ class AuthService:
                 "accessToken": jwt.encode(at_payload, os.getenv("JWT_AT_SECRET_KEY")),
                 "refreshToken": jwt.encode(rt_payload, os.getenv("JWT_RT_SECRET_KEY")),
             },
-            "expiresIn": time.mktime((now + timedelta(hours=1)).timetuple()),
+            "expiresIn": time.mktime((now + timedelta(days=1)).timetuple()),
         }
