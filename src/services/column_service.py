@@ -9,9 +9,13 @@ class ColumnService:
         )
 
     @staticmethod
-    async def update_column(id: int, title: str):
+    async def update_column(id: str, title: str):
         return await Column.prisma().update(where={"id": id}, data={"title": title})
 
     @staticmethod
     async def return_all_columns(userId: int):
         return await Column.prisma().find_many(where={"userId": userId})
+
+    @staticmethod
+    async def delete_column(id: str):
+        return await Column.prisma().delete(where={"id": id})
