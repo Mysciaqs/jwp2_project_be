@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from src.database.prisma import prisma
 from src.routers import api as api_router
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 @asynccontextmanager

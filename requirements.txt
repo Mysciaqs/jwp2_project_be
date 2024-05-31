@@ -3,3 +3,4 @@ uvicorn
 prisma
 bcrypt
 PyJWT
+python-dotenv
