@@ -1,1 +1,9 @@
 # jwp2_project_be
+
+.env
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/todo"
+JWT_AT_SECRET_KEY=bLmb41djbjRjYIS09x34d/JKgyGIhkbXuyjtgy8/9e9XhBSqvgZvcEXF6nq26QxwmKgCW8s7YBfU+eV7gcUpaA==
+JWT_RT_SECRET_KEY=vh+a4GH64Jz8i5moKoctVeoO6guYVdRYeVwo9/fGv9YUAwXtEKKSASfo0ynjbf7R4IEdcKsYFay1CNADHG/jcA==
+JWT_EXPIRATION_TIME=3600000
+JWT_AT_EXPIRATION_TIME=1h
+JWT_RT_EXPIRATION_TIME=7d
